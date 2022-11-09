@@ -84,8 +84,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
                   aria-expanded="true"
                 >
                   {activeCategory?.name
-                    ? `Category: ${activeCategory?.name}`
-                    : 'All Categories'}
+                    ? `Catégorie: ${activeCategory?.name}`
+                    : 'Tous les produits'}
                   <svg
                     className="-mr-1 ml-2 h-5 w-5"
                     xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +132,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                             'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
                           }
                         >
-                          All Categories
+                          Tous les produits
                         </a>
                       </Link>
                     </li>
@@ -170,7 +170,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
           </div>
 
           {/* Designs */}
-          <div className="relative inline-block w-full">
+          {/* <div className="relative inline-block w-full">
             <div className="lg:hidden mt-3">
               <span className="rounded-md shadow-sm">
                 <button
@@ -233,7 +233,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                             'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
                           }
                         >
-                          All Designers
+                          Marques
                         </a>
                       </Link>
                     </li>
@@ -268,7 +268,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         {/* Products */}
         <div className="col-span-8 order-3 lg:order-none">
@@ -282,10 +282,10 @@ export default function Search({ categories, brands }: SearchPropsType) {
                       hidden: !data.found,
                     })}
                   >
-                    Showing {data.products.length} results{' '}
+                    {data.products.length} résultats{' '}
                     {q && (
                       <>
-                        for "<strong>{q}</strong>"
+                        pour "<strong>{q}</strong>"
                       </>
                     )}
                   </span>
@@ -297,21 +297,21 @@ export default function Search({ categories, brands }: SearchPropsType) {
                   >
                     {q ? (
                       <>
-                        There are no products that match "<strong>{q}</strong>"
+                        Aucun produit ne correspond à "<strong>{q}</strong>"
                       </>
                     ) : (
                       <>
-                        There are no products that match the selected category.
+                        Aucun produit ne correspond à la catégorie sélectionnée
                       </>
                     )}
                   </span>
                 </>
               ) : q ? (
                 <>
-                  Searching for: "<strong>{q}</strong>"
+                  Recherche de: "<strong>{q}</strong>"
                 </>
               ) : (
-                <>Searching...</>
+                <>Recherche en cours...</>
               )}
             </div>
           )}
@@ -342,7 +342,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
         </div>
 
         {/* Sort */}
-        <div className="col-span-8 lg:col-span-2 order-2 lg:order-none">
+        {/* <div className="col-span-8 lg:col-span-2 order-2 lg:order-none">
           <div className="relative inline-block w-full">
             <div className="lg:hidden">
               <span className="rounded-md shadow-sm">
@@ -433,7 +433,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </Container>
   )

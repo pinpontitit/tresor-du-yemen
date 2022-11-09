@@ -11,15 +11,15 @@ import {
 
 const LINKS = [
   {
-    name: 'My Orders',
+    name: 'Mes commandes',
     href: '/orders',
   },
   {
-    name: 'My Profile',
+    name: 'Mon profil',
     href: '/profile',
   },
   {
-    name: 'My Cart',
+    name: 'Mon panier',
     href: '/cart',
   },
 ]
@@ -78,7 +78,7 @@ export default function CustomerMenuContent() {
           className={cn(s.link, 'border-t border-accent-2 mt-4')}
           onClick={() => logout()}
         >
-          Logout
+          Déconnexion
         </a>
       </DropdownMenuItem>
     </DropdownContent>

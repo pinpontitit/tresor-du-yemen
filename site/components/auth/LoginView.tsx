@@ -69,17 +69,21 @@ const LoginView: React.FC = () => {
       <div className="flex flex-col space-y-3">
         {message && (
           <div className="text-red border border-red p-3">
-            {message}. Did you {` `}
+            {message}. Avez-vous {` `}
             <a
               className="text-accent-9 inline font-bold hover:underline cursor-pointer"
               onClick={() => setModalView('FORGOT_VIEW')}
             >
-              forgot your password?
+              oublié votre mot de passe ?
             </a>
           </div>
         )}
         <Input type="email" placeholder="Email" onChange={setEmail} />
-        <Input type="password" placeholder="Password" onChange={setPassword} />
+        <Input
+          type="password"
+          placeholder="Mot de passe"
+          onChange={setPassword}
+        />
 
         <Button
           variant="slim"
@@ -87,16 +91,16 @@ const LoginView: React.FC = () => {
           loading={loading}
           disabled={disabled}
         >
-          Log In
+          Se connecter
         </Button>
         <div className="pt-1 text-center text-sm">
-          <span className="text-accent-7">Don't have an account?</span>
+          <span className="text-accent-7">Pas encore de compte ?</span>
           {` `}
           <a
             className="text-accent-9 font-bold hover:underline cursor-pointer"
             onClick={() => setModalView('SIGNUP_VIEW')}
           >
-            Sign Up
+            S'inscrire
           </a>
         </div>
       </div>

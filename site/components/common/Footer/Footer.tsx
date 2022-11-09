@@ -29,20 +29,20 @@ const Footer: FC<Props> = ({ className, pages }) => {
   return (
     <footer className={rootClassName}>
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-b border-accent-2 py-12 text-primary bg-primary transition-colors duration-150">
-          <div className="col-span-1 lg:col-span-2">
-            <Link href="/">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-accent-2 pt-12 text-primary bg-primary transition-colors duration-150">
+          {/* <div className="col-span-1 lg:col-span-2">
+                <Link href="/">
               <a className="flex flex-initial items-center font-bold md:mr-24">
                 <span className="rounded-full border border-accent-6 mr-2">
                   <Logo />
                 </span>
                 <span>ACME</span>
               </a>
-            </Link>
-          </div>
+            </Link> 
+          </div>*/}
           <div className="col-span-1 lg:col-span-8">
             <div className="grid md:grid-rows-4 md:grid-cols-3 md:grid-flow-col">
-              {[...links, ...sitePages].map((page) => (
+              {/* {[...links, ...sitePages].map((page) => (
                 <span key={page.url} className="py-3 md:py-0 md:pb-4">
                   <Link href={page.url!}>
                     <a className="text-accent-9 hover:text-accent-6 transition ease-in-out duration-150">
@@ -50,7 +50,28 @@ const Footer: FC<Props> = ({ className, pages }) => {
                     </a>
                   </Link>
                 </span>
-              ))}
+              ))} */}
+              <span className="py-3 md:py-0 md:pb-4">
+                <Link href="/en-US/contact">
+                  <a className="text-accent-9 hover:text-accent-6 transition ease-in-out duration-150">
+                    Nous contacter
+                  </a>
+                </Link>
+              </span>
+              <span className="py-3 md:py-0 md:pb-4">
+                <Link href="/">
+                  <a className="text-accent-9 hover:text-accent-6 transition ease-in-out duration-150">
+                    Conditions générales de ventes
+                  </a>
+                </Link>
+              </span>
+              <span className="py-3 md:py-0 md:pb-4">
+                <Link href="/">
+                  <a className="text-accent-9 hover:text-accent-6 transition ease-in-out duration-150">
+                    Politique de remboursement
+                  </a>
+                </Link>
+              </span>
             </div>
           </div>
           <div className="col-span-1 lg:col-span-2 flex items-start lg:justify-end text-primary">
@@ -68,11 +89,24 @@ const Footer: FC<Props> = ({ className, pages }) => {
         </div>
         <div className="pt-6 pb-10 flex flex-col md:flex-row justify-between items-center space-y-4 text-accent-6 text-sm">
           <div>
-            <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
+            <span>&copy; 2022, Trésor du Yémen </span>
           </div>
           <div className="flex items-center text-primary text-sm">
-            <span className="text-primary">Created by</span>
-            <a
+            <span className="text-primary">
+              Site conçu par{' '}
+              <Link href="/">
+                <a
+                  rel="noopener noreferrer"
+                  href="https://vercel.com"
+                  aria-label="Lien vers le concepteur du site"
+                  target="_blank"
+                  className="text-primary"
+                >
+                  Dylan De Albuquerque
+                </a>
+              </Link>
+            </span>
+            {/* <a
               rel="noopener noreferrer"
               href="https://vercel.com"
               aria-label="Vercel.com Link"
@@ -83,7 +117,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
                 className="inline-block h-6 ml-3 text-primary"
                 alt="Vercel.com Logo"
               />
-            </a>
+            </a> */}
           </div>
         </div>
       </Container>

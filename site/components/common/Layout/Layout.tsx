@@ -109,10 +109,16 @@ const Layout: React.FC<Props> = ({
 }) => {
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   const { locale = 'en-US' } = useRouter()
-  const navBarlinks = categories.slice(0, 2).map((c) => ({
-    label: c.name,
-    href: `/search/${c.slug}`,
-  }))
+  const navBarlinks = categories //MODIFIER ICI POUR modifier les sections du menu qui apparait sur mobile (on peut mofidier aussi la section catégories sur Shopify)
+    .slice(0, 2)
+    .map((c) => ({
+      label: c.name,
+      href: `/search/${c.slug}`,
+    }))
+    .concat({
+      label: 'Nos salons',
+      href: `/search/`, //METTRE ICI l'URL de la page MES SALONS
+    })
 
   return (
     <CommerceProvider locale={locale}>
@@ -124,7 +130,7 @@ const Layout: React.FC<Props> = ({
         <CheckoutProvider>
           <SidebarUI links={navBarlinks} />
         </CheckoutProvider>
-        <FeatureBar
+        {/*  <FeatureBar
           title="This site uses cookies to improve your experience. By clicking, you agree to our Privacy Policy."
           hide={acceptedCookies}
           action={
@@ -132,7 +138,7 @@ const Layout: React.FC<Props> = ({
               Accept cookies
             </Button>
           }
-        />
+        /> */}
       </div>
     </CommerceProvider>
   )

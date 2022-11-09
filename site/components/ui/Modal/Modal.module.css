@@ -6,6 +6,8 @@
 
 .modal {
   @apply bg-primary p-12 border border-accent-2 relative;
+  /*  width: 418px;
+  heigth: 420px; */
 }
 
 .modal:focus {

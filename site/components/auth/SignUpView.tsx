@@ -83,17 +83,22 @@ const SignUpView: FC<Props> = () => {
             }}
           ></div>
         )}
-        <Input placeholder="First Name" onChange={setFirstName} />
-        <Input placeholder="Last Name" onChange={setLastName} />
+        <Input placeholder="Prénom" onChange={setFirstName} />
+        <Input placeholder="Nom" onChange={setLastName} />
         <Input type="email" placeholder="Email" onChange={setEmail} />
-        <Input type="password" placeholder="Password" onChange={setPassword} />
+        <Input
+          type="password"
+          placeholder="Mot de passe"
+          onChange={setPassword}
+        />
         <span className="text-accent-8">
           <span className="inline-block align-middle ">
             <Info width="15" height="15" />
           </span>{' '}
           <span className="leading-6 text-sm">
-            <strong>Info</strong>: Passwords must be longer than 7 chars and
-            include numbers.{' '}
+            <strong>Attention</strong>: Votre mot de passe doit contenir au
+            moins 7 caractères et utiliser à la fois des lettres et des
+            chiffres.{' '}
           </span>
         </span>
         <div className="pt-2 w-full flex flex-col">
@@ -103,18 +108,18 @@ const SignUpView: FC<Props> = () => {
             loading={loading}
             disabled={disabled}
           >
-            Sign Up
+            S'inscrire
           </Button>
         </div>
 
         <span className="pt-1 text-center text-sm">
-          <span className="text-accent-7">Do you have an account?</span>
+          <span className="text-accent-7">Vous avez déjà un compte ?</span>
           {` `}
           <a
             className="text-accent-9 font-bold hover:underline cursor-pointer"
             onClick={() => setModalView('LOGIN_VIEW')}
           >
-            Log In
+            Se connecter
           </a>
         </span>
       </div>
