@@ -8,6 +8,7 @@ import { Github, Vercel } from '@components/icons'
 import { Logo, Container } from '@components/ui'
 import { I18nWidget } from '@components/common'
 import s from './Footer.module.css'
+import Image from 'next/image'
 
 interface Props {
   className?: string
@@ -92,32 +93,21 @@ const Footer: FC<Props> = ({ className, pages }) => {
             <span>&copy; 2022, Trésor du Yémen </span>
           </div>
           <div className="flex items-center text-primary text-sm">
-            <span className="text-primary">
-              Site conçu par{' '}
-              <Link href="/">
-                <a
-                  rel="noopener noreferrer"
-                  href="https://vercel.com"
-                  aria-label="Lien vers le concepteur du site"
-                  target="_blank"
-                  className="text-primary"
-                >
-                  Dylan De Albuquerque
-                </a>
-              </Link>
-            </span>
-            {/* <a
+            <span className="text-primary">Site conçu par</span>
+            <a
               rel="noopener noreferrer"
-              href="https://vercel.com"
-              aria-label="Vercel.com Link"
+              href="https://github.com/dylandea"
+              aria-label="Link to site designer"
               target="_blank"
-              className="text-primary"
+              className="text-primary ml-3"
             >
-              <Vercel
-                className="inline-block h-6 ml-3 text-primary"
-                alt="Vercel.com Logo"
+              <Image
+                src="/logo512cropwhite.png"
+                alt="StudioLandais.com logo"
+                height={87}
+                width={178}
               />
-            </a> */}
+            </a>
           </div>
         </div>
       </Container>
