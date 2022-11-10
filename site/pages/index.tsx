@@ -40,7 +40,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <Grid variant="filled">
+      {/* <Grid variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard
             key={product.id}
@@ -52,17 +52,24 @@ export default function Home({
             }}
           />
         ))}
-      </Grid>
-      <Marquee variant="secondary">
+      </Grid> */}
+      <Marquee variant="primary">
         {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard key={product.id} product={product} variant="slim" />
+          <ProductCard
+            key={product.id}
+            product={product}
+            variant="slim"
+            imgProps={{
+              priority: true,
+            }}
+          />
         ))}
       </Marquee>
       <Hero
         headline=" Dessert dragée halvah croissant."
         description="Cupcake ipsum dolor sit amet lemon drops pastry cotton candy. Sweet carrot cake macaroon bonbon croissant fruitcake jujubes macaroon oat cake. Soufflé bonbon caramels jelly beans. Tiramisu sweet roll cheesecake pie carrot cake. "
       />
-      <Grid layout="B" variant="filled">
+      {/* <Grid layout="B" variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard
             key={product.id}
@@ -73,12 +80,12 @@ export default function Home({
             }}
           />
         ))}
-      </Grid>
-      <Marquee>
+      </Grid> */}
+      {/* <Marquee>
         {products.slice(3).map((product: any, i: number) => (
           <ProductCard key={product.id} product={product} variant="slim" />
         ))}
-      </Marquee>
+      </Marquee> */}
       {/* <HomeAllProductsGrid
         newestProducts={products}
         categories={categories}

@@ -5,6 +5,7 @@ export interface State {
   displaySidebar: boolean
   displayDropdown: boolean
   displayModal: boolean
+  displaySearchBar: boolean
   sidebarView: string
   modalView: string
   userAvatar: string
@@ -14,6 +15,7 @@ const initialState = {
   displaySidebar: false,
   displayDropdown: false,
   displayModal: false,
+  displaySearchBar: false,
   modalView: 'LOGIN_VIEW',
   sidebarView: 'CART_VIEW',
   userAvatar: '',
@@ -37,6 +39,12 @@ type Action =
     }
   | {
       type: 'CLOSE_MODAL'
+    }
+  | {
+      type: 'OPEN_SEARCH_BAR'
+    }
+  | {
+      type: 'CLOSE_SEARCH_BAR'
     }
   | {
       type: 'SET_MODAL_VIEW'
@@ -103,6 +111,18 @@ function uiReducer(state: State, action: Action) {
         displayModal: false,
       }
     }
+    case 'OPEN_SEARCH_BAR': {
+      return {
+        ...state,
+        displaySearchBar: true,
+      }
+    }
+    case 'CLOSE_SEARCH_BAR': {
+      return {
+        ...state,
+        displaySearchBar: false,
+      }
+    }
     case 'SET_MODAL_VIEW': {
       return {
         ...state,
@@ -165,6 +185,15 @@ export const UIProvider: FC<{ children?: ReactNode }> = (props) => {
     [dispatch]
   )
 
+  const openSearchBar = useCallback(
+    () => dispatch({ type: 'OPEN_SEARCH_BAR' }),
+    [dispatch]
+  )
+  const closeSearchBar = useCallback(
+    () => dispatch({ type: 'CLOSE_SEARCH_BAR' }),
+    [dispatch]
+  )
+
   const setUserAvatar = useCallback(
     (value: string) => dispatch({ type: 'SET_USER_AVATAR', value }),
     [dispatch]
@@ -191,6 +220,8 @@ export const UIProvider: FC<{ children?: ReactNode }> = (props) => {
       closeDropdown,
       openModal,
       closeModal,
+      openSearchBar,
+      closeSearchBar,
       setModalView,
       setSidebarView,
       setUserAvatar,

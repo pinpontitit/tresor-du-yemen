@@ -109,16 +109,24 @@ const Layout: React.FC<Props> = ({
 }) => {
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   const { locale = 'en-US' } = useRouter()
-  const navBarlinks = categories //MODIFIER ICI POUR modifier les sections du menu qui apparait sur mobile (on peut mofidier aussi la section catégories sur Shopify)
+  /*  const navBarlinks = categories //MODIFIER ICI POUR modifier les sections du menu qui apparait sur mobile (on peut mofidier aussi la section catégories sur Shopify)
     .slice(0, 2)
     .map((c) => ({
       label: c.name,
       href: `/search/${c.slug}`,
     }))
-    .concat({
-      label: 'Nos salons',
-      href: `/search/`, //METTRE ICI l'URL de la page MES SALONS
-    })
+    .concat(  //ça c'est tout ce que je rajoute au menu d'origine
+      { label: 'Nos produits', href: `/search/` },
+      { label: 'Nous trouver', href: `/search/` },
+      { label: 'Mariages et évènements', href: `/search/` },
+      { label: 'Professionnels', href: `/search/` }
+    ) */
+  const navBarlinks = [
+    { label: 'Nos produits', href: `/search/` },
+    { label: 'Nous trouver', href: `/search/` },
+    { label: 'Mariages et évènements', href: `/search/` },
+    { label: 'Professionnels', href: `/search/` },
+  ]
 
   return (
     <CommerceProvider locale={locale}>

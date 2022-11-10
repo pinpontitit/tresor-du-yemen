@@ -2,9 +2,10 @@ import { FC } from 'react'
 import Link from 'next/link'
 import s from './Navbar.module.css'
 import NavbarRoot from './NavbarRoot'
-import { Logo, Container } from '@components/ui'
+import { Logo, Container, Button } from '@components/ui'
 import { Searchbar, UserNav } from '@components/common'
 import Image from 'next/image'
+/* import { useUI } from '@components/ui/context' */
 
 interface Link {
   href: string
@@ -14,6 +15,22 @@ interface Link {
 interface NavbarProps {
   links?: Link[]
 }
+
+/* const SearchBarDesktop: React.FC = () => {
+  const { displaySearchBar, closeSearchBar } = useUI()
+  return displaySearchBar ? (
+    <Searchbar className="justify-center flex-1 hidden lg:flex " />
+  ) : null
+} */
+
+/* const SearchBarMobile: React.FC = () => {
+  const { displaySearchBar, closeSearchBar } = useUI()
+  return displaySearchBar ? (
+    <div className="flex pb-4 lg:px-40 xl:px-96">
+      <Searchbar id="mobile-search" />
+    </div>
+  ) : null
+} */
 
 const Navbar: FC<NavbarProps> = ({ links }) => (
   <NavbarRoot>
@@ -33,9 +50,6 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
             </a>
           </Link>
           <nav className={s.navMenu}>
-            <Link href="/search">
-              <a className={s.link}>Tous les produits</a>
-            </Link>
             {links?.map((l) => (
               <Link href={l.href} key={l.href}>
                 <a className={s.link}>{l.label}</a>
@@ -44,20 +58,24 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
           </nav>
         </div>
         {/* {process.env.COMMERCE_SEARCH_ENABLED && (
-          <div className="justify-center flex-1 hidden lg:flex">
+          <div className="justify-center flex-1 hidden lg:flex"> Version Originale avec barre au centre (ça poussait les sections du menu)
             <Searchbar />
           </div>
         )} */}
-        <div className="flex items-center justify-end flex-1 space-x-8">
-          <Searchbar className="justify-center flex-1 hidden lg:flex" />
+        <div className="flex items-center justify-end space-x-8">
+          {process.env.COMMERCE_SEARCH_ENABLED && (
+            <Searchbar className="justify-center flex-1 hidden xl:flex" />
+          )}
+          {/* <SearchBarDesktop /> autre version où la barre n'apparait que lorsqu'on clique sur l'icone*/}
           <UserNav />
         </div>
       </div>
       {process.env.COMMERCE_SEARCH_ENABLED && (
-        <div className="flex pb-4 lg:px-6 lg:hidden">
+        <div className="flex pb-4 lg:px-6 xl:hidden">
           <Searchbar id="mobile-search" />
         </div>
       )}
+      {/* <SearchBarMobile /> autre version où la barre n'apparait que lorsqu'on clique sur l'icone */}
     </Container>
   </NavbarRoot>
 )
