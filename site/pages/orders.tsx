@@ -1,3 +1,4 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import type { GetStaticPropsContext } from 'next'
 import commerce from '@lib/api/commerce'
 import { Bag } from '@components/icons'
@@ -16,7 +17,11 @@ export async function getStaticProps({
   const { categories } = await siteInfoPromise
 
   return {
-    props: { pages, categories },
+    props: {
+      pages,
+      categories,
+      ...(await serverSideTranslations(locale!, ['common'])),
+    },
   }
 }
 

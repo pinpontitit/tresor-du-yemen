@@ -1,3 +1,4 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
 import { ProductCard } from '@components/product'
@@ -30,6 +31,7 @@ export async function getStaticProps({
       categories,
       brands,
       pages,
+      ...(await serverSideTranslations(locale!, ['common'])),
     },
     revalidate: 60,
   }

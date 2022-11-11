@@ -1,3 +1,6 @@
+// @ts-check
+const { i18n } = require('./next-i18next.config.js')
+
 const commerce = require('./commerce.config.json')
 const { withCommerceConfig, getProviderName } = require('./commerce-config')
 
@@ -10,10 +13,7 @@ const isVendure = provider === '@vercel/commerce-vendure'
 
 module.exports = withCommerceConfig({
   commerce,
-  i18n: {
-    locales: ['en-US', 'es'],
-    defaultLocale: 'en-US',
-  },
+  i18n: i18n,
   rewrites() {
     return [
       (isBC || isShopify || isSwell || isVendure || isSaleor) && {

@@ -1,3 +1,4 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import type {
   GetStaticPathsContext,
   GetStaticPropsContext,
@@ -44,7 +45,12 @@ export async function getStaticProps({
   }
 
   return {
-    props: { pages, page, categories },
+    props: {
+      pages,
+      page,
+      categories,
+      ...(await serverSideTranslations(locale!, ['common'])),
+    },
     revalidate: 60 * 60, // Every hour
   }
 }
@@ -70,9 +76,7 @@ export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   }
 }
 
-export default function Pages({
-  page,
-}: {page: Page}) {
+export default function Pages({ page }: { page: Page }) {
   const router = useRouter()
 
   return router.isFallback ? (

@@ -1,3 +1,5 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
 import commerce from '@lib/api/commerce'
@@ -17,6 +19,7 @@ export async function getSearchStaticProps({
       pages,
       categories,
       brands,
+      ...(await serverSideTranslations(locale!, ['common'])),
     },
     revalidate: 200,
   }

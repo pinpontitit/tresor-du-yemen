@@ -53,7 +53,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
                 </span>
               ))} */}
               <span className="py-3 md:py-0 md:pb-4">
-                <Link href="/en-US/contact">
+                <Link href="/">
                   <a className="text-accent-9 hover:text-accent-6 transition ease-in-out duration-150">
                     Nous contacter
                   </a>

@@ -1,3 +1,4 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import type {
   GetStaticPathsContext,
   GetStaticPropsContext,
@@ -43,6 +44,7 @@ export async function getStaticProps({
       product,
       relatedProducts,
       categories,
+      ...(await serverSideTranslations(locale!, ['common'])),
     },
     revalidate: 200,
   }

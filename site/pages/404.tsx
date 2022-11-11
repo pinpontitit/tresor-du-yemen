@@ -1,3 +1,4 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import type { GetStaticPropsContext } from 'next'
 import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
@@ -17,6 +18,7 @@ export async function getStaticProps({
       pages,
       categories,
       brands,
+      ...(await serverSideTranslations(locale!, ['common'])),
     },
     revalidate: 200,
   }
