@@ -1,19 +1,19 @@
 {
-  "title": "ACME Storefront | Powered by Next.js Commerce",
-  "titleTemplate": "%s - ACME Storefront",
-  "description": "Next.js Commerce - https://www.nextjs.org/commerce",
+  "title": "Tresor du Yemen",
+  "titleTemplate": "%s - Tresor du Yemen",
+  "description": "Boutique de miels et autres produits orientaux - https://www.tresorduyemen.fr",
   "openGraph": {
-    "title": "ACME Storefront | Powered by Next.js Commerce",
-    "description": "Next.js Commerce - https://www.nextjs.org/commerce",
+    "title": "Tresor du Yemen",
+    "description": "Boutique de miels et autres produits orientaux - https://www.tresorduyemen.fr",
     "type": "website",
-    "url": "https://nextjs.org/commerce",
-    "site_name": "Next.js Commerce",
+    "url": "https://www.tresorduyemen.fr",
+    "site_name": "Tresor du Yemen",
     "images": [
       {
-        "url": "/card.png",
+        "url": "/logo9.svg",
         "width": "800",
         "height": "600",
-        "alt": "Next.js Commerce"
+        "alt": "Boutique Tresor du Yemen"
       }
     ]
   },

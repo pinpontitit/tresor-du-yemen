@@ -1,3 +1,5 @@
+# chercher "français" pour trouver tous les fichiers de configuration de langue (ar, es, en, fr, etc...)
+
 # Exemple de ce qu'il faut insérer dans un composant qui utilise les traduction:
 
 import { useTranslation } from 'next-i18next';
@@ -6,6 +8,7 @@ export const Footer = () => {
 const { t } = useTranslation('footer');
 
 return (
+
 <footer>
 <p>{t('description')}</p>
 </footer>

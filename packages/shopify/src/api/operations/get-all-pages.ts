@@ -41,7 +41,7 @@ export default function getAllPagesOperation({
     const {
       fetch,
       locale,
-      locales = ['en-US', 'es'],
+      locales = ['fr', 'es', 'en', 'ar', 'de'], //français
     } = commerce.getConfig(config)
 
     const { data } = await fetch<GetAllPagesQuery, GetAllPagesQueryVariables>(

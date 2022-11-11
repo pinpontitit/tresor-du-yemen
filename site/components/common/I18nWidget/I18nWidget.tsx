@@ -22,11 +22,32 @@ const LOCALES_MAP: Record<string, LOCALE_DATA> = {
       alt: 'Bandera Colombiana',
     },
   },
-  'en-US': {
+  en: {
     name: 'English',
     img: {
       filename: 'flag-en-us.svg',
-      alt: 'US Flag',
+      alt: 'Union Jack flag',
+    },
+  },
+  fr: {
+    name: 'Français', //français
+    img: {
+      filename: 'flag-en-us.svg',
+      alt: 'Drapeau français',
+    },
+  },
+  ar: {
+    name: 'العربية',
+    img: {
+      filename: 'flag-en-us.svg',
+      alt: 'علم جامعة الدول العربية',
+    },
+  },
+  de: {
+    name: 'Deutsch',
+    img: {
+      filename: 'flag-en-us.svg',
+      alt: 'Flagge Deutschlands',
     },
   },
 }
@@ -36,7 +57,7 @@ const I18nWidget: FC = () => {
   const {
     locale,
     locales,
-    defaultLocale = 'en-US',
+    defaultLocale = 'fr',
     asPath: currentPath,
   } = useRouter()
 

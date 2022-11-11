@@ -1,6 +1,6 @@
 {
-  "name": "next-commerce",
-  "version": "0.0.1",
+  "name": "tresor-du-yemen-website",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

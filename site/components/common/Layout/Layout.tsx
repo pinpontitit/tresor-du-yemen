@@ -108,7 +108,7 @@ const Layout: React.FC<Props> = ({
   pageProps: { categories = [], ...pageProps },
 }) => {
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
-  const { locale = 'en-US' } = useRouter()
+  const { locale = 'fr' } = useRouter() //français
   /*  const navBarlinks = categories //MODIFIER ICI POUR modifier les sections du menu qui apparait sur mobile (on peut mofidier aussi la section catégories sur Shopify)
     .slice(0, 2)
     .map((c) => ({
