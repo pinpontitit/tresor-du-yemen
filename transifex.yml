@@ -1,7 +1,0 @@
-git:
-  filters:
-    - filter_type: file
-      file_format: CHROME
-      source_language: fr
-      source_file: site/locales/fr/common.json
-      translation_files_expression: 'site/locales/<lang>/common.json'
