@@ -1,7 +1,7 @@
 git:
   filters:
     - filter_type: file
-      file_format: CHROME
+      file_format: KEYVALUEJSON
       source_language: fr
       source_file: site/public/locales/fr/common.json
       translation_files_expression: 'site/public/locales/<lang>/common.json'
