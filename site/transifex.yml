@@ -3,5 +3,5 @@ git:
     - filter_type: file
       file_format: KEYVALUEJSON
       source_language: fr
-      source_file: site/public/locales/fr/common.json
-      translation_files_expression: 'site/public/locales/<lang>/common.json'
+      source_file: public/locales/fr/common.json
+      translation_files_expression: 'public/locales/<lang>/common.json'
